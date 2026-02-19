@@ -128,3 +128,6 @@ password2.addEventListener("click", () => handleCopy(password2));
 
 
 
+window.increment = increment
+window.save = save
+window.reset = reset
