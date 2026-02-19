@@ -64,6 +64,7 @@ function getRandomCharacter(poolChar) {
 // Generates Password by use of subfunction getRandomCharcter()
 // Args pool of characters, passwordLength
 // Returns generated password
+
 function generatePassword(poolChar,passwordLength) {
     let password = ""
     for (i = 0; i < passwordLength; i++) {
@@ -87,6 +88,9 @@ function renderPassword() {
     setTimeout(() => generateButtonEl.classList.remove("copied"), 400);
     
 }
+
+generateButtonEl.addEventListener("click", ()=> renderPassword())
+
 
 
 // COPY PASSWORD TO CLIPBOARD FUNCTIONALITY
