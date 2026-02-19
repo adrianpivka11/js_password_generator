@@ -1,15 +1,25 @@
 body {
+    background-image: url("background_image/img8.jpg");
+    color: rgba(255, 255, 255, 0.9);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;  
+    margin: 0;
+    display: flex;
+    justify-content: center; 
+    
+    
+}
+
+.container{
+    margin-top: 150px;
     margin-left: 30px;
     display: flex;
     flex-direction: column;
     align-items: left;
-    background-color: #1F2937;
-    color: #F9FAFB;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;  
     max-width: 450px; 
 }
+
 
 .highlight {
     color: #4ADF86;   
@@ -23,30 +33,35 @@ h1 {
 h3 {
     margin-top:10px;
     font-weight: 100;
-    color: #D1D5DB;
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 50px;  
 }
 
 #gp {
     display: flex;
     flex-direction: row;
-    justify-content: left;   
+    justify-content: left;
+    width: 450px;   
 }
 
 button {
     background-color: #10B981;
     width: 195px;
     height: 45px;
-    border: 0px;
-    border-radius: 18px;
-    color: #F9FAFB;
-    font-weight: 400;
+    border-radius: 12px;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
     cursor: pointer;
     margin-bottom: 18px;
-}
+    background: rgba(255, 255, 255, 0.3);  
+    backdrop-filter: blur(25px) brightness(1.1);
+    -webkit-backdrop-filter: blur(25px) brightness(1.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  
+  }
 
-#len {
-  -webkit-appearance: none; /* Chrome, Safari */
+#password-length-input {
+  -webkit-appearance: none;
   appearance: none;
   width: 100%;
   height: 6px;
@@ -54,33 +69,28 @@ button {
   border-radius: 3px;
   outline: none;
   margin-top: 10px;
+  
 }
 
-#len::-webkit-slider-runnable-track {
+#password-length-input::-webkit-slider-runnable-track {
   height: 6px;
   background: linear-gradient(90deg, #D1FAE5, #059669);
   border-radius: 3px;
 }
 
-#len::-webkit-slider-thumb {
+#password-length-input::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 18px;
   height: 18px;
   background: #E5E7EB;
   border-radius: 50%;
   cursor: pointer;
-  margin-top: -6px; /* zarovnanie na track */
+  margin-top: -6px; 
 }
 
-#len:hover::-webkit-slider-thumb {
+#password-length-input:hover::-webkit-slider-thumb {
   background: #ECFDF5;
 }
-
-
-
-
-
-
 
 
 
@@ -90,22 +100,28 @@ button {
     margin-top: 20px
 }
 .setting-row {
-  margin-top: 0px;
+  margin-top: 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 200px;
   height: 40px;
-  border-radius: 18px;
-  background: #111827;   /* iOS dark-ish */
-  color: #fff;
+  background: #111827;   
+  color: rgba(255, 255, 255, 0.9);
   padding-left: 25px;
   padding-right: 10px;  
+  
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(25px) brightness(1.1);
+  -webkit-backdrop-filter: blur(25px) brightness(1.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  
 }
 
 .setting-label {
-  font-size: 16px;       /* uprav podľa dizajnu */
+  font-size: 16px;       
   font-weight: 500;
   letter-spacing: 0.2px;
 }
@@ -114,72 +130,130 @@ button {
 
 
 
-/* wrapper */
+
 .switch {
   position: relative;
   display: inline-block;
-  width: 50px;
-  height: 25px;
+  width: 52px;
+  height: 32px;
 }
 
-/* schováme checkbox, ale necháme ho funkčný */
+
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-/* track */
+
 .slider {
   position: absolute;
   inset: 0;
-  background: #3a3a3c;     /* off */
   border-radius: 999px;
   cursor: pointer;
-  transition: background 0.2s ease;
+
+  
+  background: rgba(58, 58, 60, 0.85);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.10),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.35);
+
+  transition: background 0.22s ease, box-shadow 0.22s ease;
 }
-/* thumb */
+
+
 .slider::before {
   content: "";
   position: absolute;
-  height: 20px;
-  width: 20px;
-  left: 3px;
+  height: 28px;
+  width: 28px;
+  left: 2px;
   top: 2px;
 
-  background: white;
   border-radius: 50%;
-  transition: transform 0.2s ease;
-  /* jemný “iOS” tieň */
-  box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+
+  
+  background: linear-gradient(to bottom, #ffffff, #f2f2f7);
+
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.25),
+    0 2px 4px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75);
+
+  transition: transform 0.28s cubic-bezier(0.2, 0.9, 0.2, 1);
+  will-change: transform;
 }
-/* ON stav */
+
+
 .switch input:checked + .slider {
-  background: #4ADF86;     /* iOS green */
+  background: rgba(52, 199, 89, 0.95); 
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.18),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.20);
 }
+
 .switch input:checked + .slider::before {
-  transform: translateX(25px);
+  transform: translateX(20px);
 }
-/* Focus pre klávesnicu (prístupnosť) */
+
+
+.switch input:active + .slider::before {
+  transform: translateX(0) scale(0.96);
+}
+.switch input:checked:active + .slider::before {
+  transform: translateX(20px) scale(0.96);
+}
+
+
 .switch input:focus-visible + .slider {
   outline: 3px solid rgba(52, 199, 89, 0.45);
   outline-offset: 4px;
 }
 
 
+@media (prefers-reduced-motion: reduce) {
+  .slider,
+  .slider::before {
+    transition: none;
+  }
+}
+
+
 
 
 .divider {
-    border: none;              /* odstráni default štýl */
+    border: none;              
     border-top: 1px solid #2F3E53;
     margin: 35px 0;
 }
 
+
 .password {
+    cursor: pointer;
+    user-select: all;
     margin-top: 0px;
     color: #4ADF86;
     background-color: #374151;
     padding: 10px 30px;
-    border-radius: 18px;
     margin-right: 10px;
+    background: rgba(255, 255, 255, 0.3);  
+    backdrop-filter: blur(25px) brightness(1.1);
+    -webkit-backdrop-filter: blur(25px) brightness(1.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    
+}
+
+.copied {
+  transform: scale(0.98);
+  opacity: 0.7;
+}
+
+
+
+.glass {
+  width:100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px) brightness (1.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
