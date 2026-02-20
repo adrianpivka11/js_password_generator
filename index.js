@@ -131,4 +131,4 @@ password1.addEventListener("click", () => handleCopy(password1));
 password2.addEventListener("click", () => handleCopy(password2));
 
 
-
+window.renderPassword = renderPassword
