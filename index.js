@@ -132,3 +132,12 @@ password2.addEventListener("click", () => handleCopy(password2));
 
 
 window.renderPassword = renderPassword
+window.shouldUseSymbols = shouldUseSymbols
+window.shouldUseNumbers = shouldUseNumbers
+window.determinePoolOfCharacters = determinePoolOfCharacters
+window.getRandomCharacter = getRandomCharacter
+window.generatePassword = generatePassword
+window.renderPassword = renderPassword
+window.copyTextToClipboard = copyTextToClipboard
+window.isPlaceholder = isPlaceholder
+window.handleCopy = handleCopy
