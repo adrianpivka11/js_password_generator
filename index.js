@@ -67,7 +67,7 @@ function getRandomCharacter(poolChar) {
 
 function generatePassword(poolChar,passwordLength) {
     let password = ""
-    for (i = 0; i < passwordLength; i++) {
+    for (let i = 0; i < passwordLength; i++) {
         let randomCharacter = getRandomCharacter(poolChar)
         password += randomCharacter   
     }
