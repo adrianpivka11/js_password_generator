@@ -38,7 +38,7 @@ function shouldUseNumbers() {
 // Returns pool of characters of which password should be generated
 function determinePoolOfCharacters() {
     const letters = characters.slice(0, 52)
-    const numbers = characters.slice(53, 61)
+    const numbers = characters.slice(52, 61)
     const symbols = characters.slice(62, 91)
     let pool = ""
     if (shouldUseNumbers() && shouldUseSymbols()) {
